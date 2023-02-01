@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-
+import CustomerLogo from '../CustomerLogo/CustomerLogo.component';
 import './Header.scss';
 
 export class Header extends PureComponent {
@@ -7,14 +7,7 @@ export class Header extends PureComponent {
         return (
             <header>
                 <div className='Content-Wrapper'>
-                    <div className='Name-Wrapper'>
-                        <div className='Header-Icon'>
-                            K
-                        </div>
-                        <div className='Name'>
-                            Kinka <br />Finance
-                        </div>
-                    </div>
+                    <CustomerLogo></CustomerLogo>
                     <div className='Tab-Wrapper'>
                         <p>
                             Calculator

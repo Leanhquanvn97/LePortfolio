@@ -21,27 +21,4 @@ header {
         display: flex;
         gap: 26px;
     }
-
-    .Name-Wrapper {
-        display: flex;
-        gap: 20px;
-    }
-
-    .Header-Icon {
-        width: 53px;
-        height: 53px;
-        background-color: $orange-color;
-        border-radius: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-style: italic;
-        font-weight: 800;
-        font-size: 25px;
-    }
-
-    .Name {
-        font-weight: 700;
-        font-size: 20px;
-    }
 }

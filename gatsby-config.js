@@ -1,7 +1,7 @@
 /**
  * @type {import('gatsby').GatsbyConfig}
  */
-const stylePath = `"${__dirname}/src/styles/style"`.replace(/\\/g, '/')
+const stylePath = `${__dirname}/src/styles/style`.replace(/\\/g, '/')
 
 module.exports = {
   siteMetadata: {

@@ -2,13 +2,20 @@ body {
     overflow-x: hidden;
     font-family: 'Nunito Sans';
     margin: 0;
+    background-color: #E5E5E5;
 }
 
 .Content-Wrapper {
-    max-width: 1440px;
     margin-inline: auto;
 }
 
 main {
     min-height: 100vh;
+}
+
+button {
+    &:hover {
+        transition: opacity 0.5 linear;
+        opacity: 0.7;
+    }
 }

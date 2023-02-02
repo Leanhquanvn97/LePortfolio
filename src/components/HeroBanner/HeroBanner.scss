@@ -1,0 +1,68 @@
+.HeroBanner {
+    background-color: $primary-color;
+    display: flex;
+    padding-block: 100px;
+    flex-direction: column;
+
+    @include small-desktop-screen {
+        flex-direction: row;
+    }
+
+    h1 {
+        font-weight: 900;
+        font-size: 48px;
+        line-height: 130%;
+        letter-spacing: 0.01em;
+        color: white;
+
+        @include desktop {
+            font-size: 62px;
+        }
+    }
+
+    p {
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 180%;
+        color: #FFFFFF;
+        opacity: 0.8;
+    }
+
+    img {
+        width: 100%;
+        height: 500px;
+        object-fit: cover;
+
+        @include small-desktop-screen {
+            width: 500px;
+            padding-inline: 0;
+        }
+    }
+
+    .HeroBanner-Image {
+        padding: 16px 50px;
+
+        @include small-desktop-screen {
+            padding-inline: 0;
+        }
+    }
+
+    button {
+        color: white;
+        background-color: $orange-color;
+        border: 0;
+        width: 152px;
+        height: 62px;
+        font-weight: 900;
+        font-size: 18px;
+        line-height: 180%;
+    }
+
+    .HeroBanner-Conent {
+        padding-inline: 50px;
+
+        @include large-screen {
+            padding-left: 250px;
+        }
+    }
+}

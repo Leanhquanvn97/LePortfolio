@@ -35,10 +35,14 @@
     }
 
     .MortgageCalculatorBlock-Text {
-        padding-inline: 50px;
+        padding-inline: 20px;
         display: flex;
         flex-direction: column;
         justify-content: center;
+
+        @include desktop {
+            padding-inline: 50px;
+        }
     }
 
     > div {

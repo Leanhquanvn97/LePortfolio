@@ -1,10 +1,16 @@
 footer {
     padding-block: 42px 10px;
+    margin-block-start: 48px;
+    border-top: 1px solid black;
 
     > div {
         display: flex;
         justify-content: space-between;
-        padding-inline: 50px;
+        padding-inline: 20px;
+
+        @include desktop {
+            padding-inline: 50px;
+        }
 
         @include large-screen {
             padding-inline: 150px 150px;

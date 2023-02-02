@@ -1,8 +1,12 @@
 .HeroBanner {
     background-color: $primary-color;
     display: flex;
-    padding-block: 100px;
+    padding-block: 50px;
     flex-direction: column;
+
+    @include desktop {
+        padding-block: 100px;
+    }
 
     @include small-desktop-screen {
         flex-direction: row;
@@ -40,8 +44,12 @@
     }
 
     .HeroBanner-Image {
-        padding: 16px 50px;
+        padding: 16px 20px;
 
+        @include desktop {
+            padding: 16px 50px;
+        } 
+    
         @include small-desktop-screen {
             padding-inline: 0;
         }
@@ -59,7 +67,11 @@
     }
 
     .HeroBanner-Conent {
-        padding-inline: 50px;
+        padding-inline: 20px;
+
+        @include desktop {
+            padding-inline: 50px;
+        }
 
         @include large-screen {
             padding-left: 250px;

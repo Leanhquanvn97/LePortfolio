@@ -3,15 +3,24 @@ header {
     background-color: $primary-color;
     color: white;
     min-height: 70px;
-    padding-block: 42px 30px;
+    padding-block: 18px;
     position: sticky;
     top: 0;
     z-index: 10;
-    transition: transform 0.3s linear ;
-    >div {
+    transition: transform 0.3s linear;
+
+    @include desktop {
+        padding-block: 42px 30px;
+    }
+
+    > div {
         display: flex;
         justify-content: space-between;
-        padding-inline: 50px;
+        padding-inline: 20px;
+
+        @include desktop {
+            padding-inline: 50px;
+        }
 
         @include large-screen {
             padding-inline: 250px 126px;

@@ -1,7 +1,11 @@
 .MortgageCalculator {
     background-color: $primary-color;
-    padding: 65px 50px 70px 50px;
+    padding: 30px 20px 36px 20px;
 
+    @include desktop {
+        padding: 65px 50px 70px 50px;
+    }
+    
     @include large-screen {
         padding-left: 150px;
     }

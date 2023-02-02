@@ -3,9 +3,12 @@ header {
     background-color: $primary-color;
     color: white;
     min-height: 70px;
-    padding-block: 42px 10px;
-
-    > div {
+    padding-block: 42px 30px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    transition: transform 0.3s linear ;
+    >div {
         display: flex;
         justify-content: space-between;
         padding-inline: 50px;
@@ -20,5 +23,17 @@ header {
         font-size: 18px;
         display: flex;
         gap: 26px;
+    }
+
+    p {
+        opacity: 0.8;
+    }
+
+    &.hide {
+        transform: translateY(-100%);
+    }
+
+    &.mini {
+        transform: translateY(-10%);
     }
 }

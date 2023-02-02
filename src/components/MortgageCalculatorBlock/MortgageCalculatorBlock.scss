@@ -1,0 +1,47 @@
+.MortgageCalculatorBlock {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+
+    @include small-desktop-screen {
+        flex-direction: row;
+    }
+
+    h2 {
+        font-weight: 900;
+        font-size: 48px;
+        line-height: 140%;
+
+        @include desktop {
+            font-size: 60px;
+        }
+    }
+
+    p {
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 180%;
+    }
+
+    button {
+        color: white;
+        background-color: $orange-color;
+        border: 0;
+        width: 152px;
+        height: 62px;
+        font-weight: 900;
+        font-size: 18px;
+        line-height: 180%;
+    }
+
+    .MortgageCalculatorBlock-Text {
+        padding-inline: 50px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    > div {
+        flex: 1;
+    }
+}

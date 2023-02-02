@@ -1,0 +1,38 @@
+.MortgageCalculator {
+    background-color: $primary-color;
+    padding: 65px 50px 70px 50px;
+
+    @include large-screen {
+        padding-left: 150px;
+    }
+
+    h2 {
+        font-weight: 900;
+        font-size: 50px;
+        color: white;
+        letter-spacing: 0.01em;
+    }
+
+    p {
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 180%;
+        color: #FFFFFF;
+    }
+
+    h3 {
+        font-weight: 900;
+        font-size: 18px;
+        line-height: 180%;
+        color: white;
+
+        span {
+            color: $orange-color;
+        }
+    }
+
+    .MortgageCalculator-Input {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}

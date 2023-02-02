@@ -32,8 +32,7 @@ function useScrollDirection () {
 
 const Header = () => {
     const scrollDirection = useScrollDirection();
-    const small = window.pageYOffset;
-    console.log(small);
+
     return (
         <header className={`${scrollDirection}`}>
             <div className='Content-Wrapper'>

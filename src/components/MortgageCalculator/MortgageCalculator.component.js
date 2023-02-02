@@ -39,7 +39,8 @@ export class MortgageCalculator extends PureComponent {
             purchaseAmount,
             downPayment
         } = this.state;
-        return purchaseAmount - downPayment;
+
+        return (purchaseAmount - downPayment);
     };
 
     renderDraggableBar = () => {
@@ -64,7 +65,7 @@ export class MortgageCalculator extends PureComponent {
             return 0;
         }
 
-        return P * ((newInter * C) / (C - 1));
+        return (P * ((newInter * C) / (C - 1))).toFixed(0).toLocaleString();
     };
 
     render () {
@@ -76,10 +77,10 @@ export class MortgageCalculator extends PureComponent {
                     {this.renderDraggableBar()}
                 </div>
                 <h3>
-                    Loan amount: <span>${this.calculateLoanAmount()}</span>
+                    Loan amount: <span>${this.calculateLoanAmount().toLocaleString()}</span>
                 </h3>
                 <h3>
-                    Estimated repayment per month: <span>${this.calculateMonthlyPayment().toFixed(0)}</span>
+                    Estimated repayment per month: <span>${this.calculateMonthlyPayment()}</span>
                 </h3>
             </div>
         );

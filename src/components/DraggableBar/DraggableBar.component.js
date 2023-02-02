@@ -46,9 +46,7 @@ export class DraggbleBar extends PureComponent {
 
         return (
             <div className="input-range">
-                <h3>
-                    {`${text}: ${value}`}
-                </h3>
+                <h3>{`${text}: ${(+value).toLocaleString()}`}</h3>
                 <Slider
                     value={inputRange}
                     defaultValue={0}

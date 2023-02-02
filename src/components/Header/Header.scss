@@ -1,5 +1,4 @@
 header {
-    width: 100vw;
     background-color: $primary-color;
     color: white;
     min-height: 70px;
@@ -44,5 +43,13 @@ header {
 
     &.mini {
         transform: translateY(-10%);
+    }
+
+    .Name {
+        display: none;
+
+        @include small-mobile {
+            display: block;
+        }
     }
 }

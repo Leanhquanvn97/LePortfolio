@@ -1,0 +1,82 @@
+.IntroBlock {
+    padding: 32px 16px;
+    margin-inline: auto;
+
+    @include desktop {
+        padding: 272px 151px 160px;
+    }
+
+    .IntroBlock-Wrapper {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        background: #FFFFFF;
+        box-shadow: 0px 4px 120px rgba(58, 86, 78, 0.07);
+        align-items: center;
+        padding: 20px 0px;
+
+        @include desktop {
+            padding: 50px 45px;
+            width: 356px;
+        }
+
+        p {
+            padding-inline: 20px;
+
+            @include desktop {
+                padding-inline: 0;
+            }
+        }
+    }
+
+    > div {
+        display: flex;
+        gap: 35px;
+        justify-content: space-around;
+        flex-direction: column;
+
+        @include desktop {
+            flex-direction: row;
+        }
+    }
+
+    h2 {
+        font-weight: 900;
+        line-height: 140%;
+        font-size: 48px;
+        text-align: center;
+        letter-spacing: 0.01em;
+        color: #27292E;
+
+        @include desktop {
+            font-size: 60px;
+        }
+    }
+
+    &-Image {
+        width: 97px;
+        height: 97px;
+        background-color: $orange-color;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-block-end: 20px;
+    }
+
+    img {
+        width: 44px;
+        height: 44px;
+    }
+
+    p {
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 180%;
+        /* or 32px */
+
+        text-align: center;
+
+        color: #5F626B;
+    }
+}

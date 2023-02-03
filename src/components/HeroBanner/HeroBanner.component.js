@@ -1,6 +1,7 @@
 import { graphql, useStaticQuery } from 'gatsby';
 import React from 'react';
 import './HeroBanner.scss';
+import HeroBannerImage from '../Svg/HeroBannerImage.component';
 
 const HeroBanner = () => {
     const data = useStaticQuery(graphql`
@@ -30,9 +31,6 @@ const HeroBanner = () => {
             description: {
                 description = ''
             } = {},
-            image1: {
-                url = ''
-            } = {},
             title = ''
         } = {}
     } = data;
@@ -45,7 +43,7 @@ const HeroBanner = () => {
                 <button>{buttonText}</button>
             </div>
             <div className='HeroBanner-Image'>
-                <img src={`${url}`}/>
+                <HeroBannerImage/>
             </div>
         </div>
     );

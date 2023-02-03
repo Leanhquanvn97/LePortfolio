@@ -3,9 +3,11 @@
     display: flex;
     padding-block: 50px;
     flex-direction: column;
+    height: 96vh;
 
     @include desktop {
         padding-block: 100px;
+        height: auto;
     }
 
     @include small-desktop-screen {
@@ -68,13 +70,31 @@
 
     .HeroBanner-Conent {
         padding-inline: 20px;
+        z-index: 3;
 
         @include desktop {
             padding-inline: 50px;
+            flex: 1;
         }
 
         @include large-screen {
             padding-left: 250px;
         }
+    }
+
+    .HeroBanner-Image {
+        flex: 2;
+        transform: translateY(-48%);
+        z-index: 2;
+
+        @include desktop {
+            transform: none;
+        }
+    }
+
+    .HeroBannerImage {
+        max-width: 782px;
+        display: flex;
+        margin-left: auto;
     }
 }

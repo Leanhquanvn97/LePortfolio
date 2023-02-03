@@ -1,0 +1,19 @@
+.HeroBannerImage {
+    position: relative;
+
+    svg {
+        width: 100%;
+
+        &:last-child {
+            position: absolute;
+            right: 0;
+            bottom: -8%;            
+            max-width: 608px;
+            width: 78%;
+
+            @include desktop {
+                bottom: -130px;
+            }
+        }
+    }
+}

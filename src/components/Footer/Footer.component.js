@@ -2,6 +2,9 @@ import React from 'react';
 import CustomerLogo from '../CustomerLogo/CustomerLogo.component';
 import './Footer.scss';
 import { FOOTER_TAB } from './Footer.config';
+import facebook from '../../assets/icons/facebook.svg';
+import twitter from '../../assets/icons/twitter.svg';
+import instagram from '../../assets/icons/instagram.svg';
 
 const renderNavigationCotent = (text) => {
     return text.map(el => {
@@ -36,6 +39,9 @@ export const Footer = () => {
                         2021 Award winning Finance Advisor and Lorem ipsum dolor sit amet
                     </div>
                     <div className='Footer-Icons'>
+                        <img src={facebook}/>
+                        <img src={twitter}/>
+                        <img src={instagram}/>
                     </div>
                 </div>
                 <div className='Navigation-Wrapper'>

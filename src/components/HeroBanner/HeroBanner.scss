@@ -46,10 +46,14 @@
     }
 
     .HeroBanner-Image {
-        padding: 16px 20px;
+        padding: 16px 0;
+        flex: 2;
+        transform: translateY(-48%);
+        z-index: 2;
 
         @include desktop {
             padding: 16px 50px;
+            transform: none;
         } 
     
         @include small-desktop-screen {
@@ -79,16 +83,6 @@
 
         @include large-screen {
             padding-left: 250px;
-        }
-    }
-
-    .HeroBanner-Image {
-        flex: 2;
-        transform: translateY(-48%);
-        z-index: 2;
-
-        @include desktop {
-            transform: none;
         }
     }
 

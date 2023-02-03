@@ -61,11 +61,15 @@ export class MortgageCalculator extends PureComponent {
         const newInter = (interestRate / 100) / MONTHS;
         const C = Math.pow((1 + newInter), (repaymentTime * MONTHS));
 
+        if (+interestRate === 0 && +repaymentTime !== 0) {
+            return (P / (repaymentTime * MONTHS)).toFixed(0);
+        }
+
         if (+interestRate === 0 || +repaymentTime === 0) {
             return 0;
         }
 
-        return (P * ((newInter * C) / (C - 1))).toFixed(0).toLocaleString();
+        return (P * ((newInter * C) / (C - 1))).toFixed(0);
     };
 
     render () {
@@ -80,7 +84,7 @@ export class MortgageCalculator extends PureComponent {
                     Loan amount: <span>${this.calculateLoanAmount().toLocaleString()}</span>
                 </h3>
                 <h3>
-                    Estimated repayment per month: <span>${this.calculateMonthlyPayment()}</span>
+                    Estimated repayment per month: <span>${(+this.calculateMonthlyPayment()).toLocaleString()}</span>
                 </h3>
             </div>
         );

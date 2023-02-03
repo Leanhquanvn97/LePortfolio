@@ -40,6 +40,10 @@ const IntroBlock = () => {
         }
     `);
 
+    if (!data.contentfulIconIntroBlock) {
+        return '';
+    }
+
     return (
         <div className='IntroBlock'>
             <h2>High Quality Output, Awesome Service</h2>
@@ -58,10 +62,10 @@ const renderBlocks = (blocks) => {
     return (Object.entries(blockData).map(([_, el], i) => {
         const {
             description: {
-                description
+                description = ''
             } = {},
             icon: {
-                url
+                url = ''
             } = {},
             title = ''
         } = el;

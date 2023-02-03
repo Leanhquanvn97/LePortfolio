@@ -5,9 +5,15 @@ import Slider from '@mui/material/Slider';
 
 export class DraggbleBar extends PureComponent {
     static propTypes = {
-        scale: PropTypes.any,
+        scale: PropTypes.number,
         getValue: PropTypes.func,
         text: PropTypes.string
+    };
+
+    static defaultProps = {
+        scale: 0,
+        getValue: {},
+        text: ''
     };
 
     state = {
@@ -54,11 +60,7 @@ export class DraggbleBar extends PureComponent {
                     step={1}
                     min={0}
                     max={100}
-                    sx ={
-                        {
-                            height: '14px'
-                        }
-                    }
+                    sx ={{ height: '14px' }}
                 />
             </div>
         );

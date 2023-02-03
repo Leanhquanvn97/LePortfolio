@@ -19,17 +19,22 @@ const HeroBanner = () => {
             }
         }
     `);
+
+    if (!data.contentfulHeroBanner) {
+        return '';
+    }
+
     const {
         contentfulHeroBanner: {
-            buttonText,
+            buttonText = '',
             description: {
-                description
-            },
+                description = ''
+            } = {},
             image1: {
-                url
-            },
-            title
-        }
+                url = ''
+            } = {},
+            title = ''
+        } = {}
     } = data;
 
     return (

@@ -36,16 +36,20 @@ const HeroBanner = () => {
     } = data;
 
     return (
-        <div className='HeroBanner'>
-            <div className='HeroBanner-Conent'>
-                <h1>{title}</h1>
-                <p>{description}</p>
-                <button>{buttonText}</button>
+        <>
+            <div className='HeroBanner'>
+                <div className='HeroBanner-Conent'>
+                    <h1>{title}</h1>
+                    <p>{description}</p>
+                    <button>{buttonText}</button>
+                </div>
+                <div className='HeroBanner-Image'>
+                    <HeroBannerImage/>
+                </div>
             </div>
-            <div className='HeroBanner-Image'>
-                <HeroBannerImage/>
-            </div>
-        </div>
+            <div className="fullscreen empty-div gradient-overlay"></div>
+        </>
+
     );
 };
 

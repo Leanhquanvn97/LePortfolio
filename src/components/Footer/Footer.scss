@@ -1,7 +1,9 @@
 footer {
     padding-block: 42px 10px;
-    margin-block-start: 48px;
     border-top: 1px solid black;
+    z-index: 2;
+    background-color: $primary-background-color;
+    position: relative;
 
     > div {
         display: flex;
@@ -50,7 +52,7 @@ footer {
         color: #70737C;
     }
 
-    .Header-Icon {
+    .Name-Icon {
         color: white;
     }
 

@@ -2,7 +2,7 @@ body {
     overflow-x: hidden;
     font-family: 'Nunito Sans';
     margin: 0;
-    background-color: #E5E5E5;
+    background-color: $primary-background-color;
 }
 
 .Content-Wrapper {
@@ -11,11 +11,18 @@ body {
 
 main {
     min-height: 100vh;
+
+    > * {
+        background-color: $primary-background-color;
+        z-index: 2;
+        position: relative;
+    }
 }
 
 button {
     &:hover {
         transition: opacity 0.5 linear;
         opacity: 0.7;
+        cursor: pointer;
     }
 }

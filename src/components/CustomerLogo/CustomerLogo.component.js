@@ -4,7 +4,7 @@ import './CustomerLogo.scss';
 export const CustomerLogo = () => {
     return (
         <div className='Name-Wrapper'>
-            <div className='Header-Icon'>
+            <div className='Name-Icon'>
                 K
             </div>
             <div className='Name'>

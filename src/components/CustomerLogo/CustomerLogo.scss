@@ -3,7 +3,7 @@
     gap: 20px;
 }
 
-.Header-Icon {
+.Name-Icon {
     width: 53px;
     height: 53px;
     background-color: $orange-color;
@@ -14,6 +14,13 @@
     font-style: italic;
     font-weight: 800;
     font-size: 25px;
+    transition: all 0.4s linear;
+
+    &:hover {
+        transform: scale(1.1);
+        opacity: 0.7;
+        cursor: pointer;
+    }
 }
 
 .Name {

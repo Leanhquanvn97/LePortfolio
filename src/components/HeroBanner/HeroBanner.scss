@@ -1,12 +1,14 @@
 .HeroBanner {
     background-color: $primary-color;
     display: flex;
-    padding-block: 50px;
+    padding-block: 80px 50px;    
     flex-direction: column;
     height: 96vh;
+    position: fixed;
+    top: 0;
 
     @include desktop {
-        padding-block: 100px;
+        padding-block: 175px 100px;        
         height: auto;
     }
 
@@ -91,4 +93,13 @@
         display: flex;
         margin-left: auto;
     }
+}
+
+.empty-div {
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+    background: transparent;
+    pointer-events: none;
 }

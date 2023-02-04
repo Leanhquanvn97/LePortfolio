@@ -7,12 +7,27 @@
         &:last-child {
             position: absolute;
             right: 0;
-            bottom: -8%;            
+            bottom: -8%;
             max-width: 608px;
             width: 78%;
 
             @include desktop {
                 bottom: -130px;
+            }
+
+            path {
+                animation: progress 1s linear forwards;
+                stroke-dasharray: 1038;
+
+                @keyframes progress {
+                    from {
+                        stroke-dashoffset: 178%;
+                    }
+
+                    to {
+                        stroke-dashoffset: 0;
+                    }
+                }
             }
         }
     }

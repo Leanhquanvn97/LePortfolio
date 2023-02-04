@@ -39,9 +39,9 @@ export const Footer = () => {
                         2021 Award winning Finance Advisor and Lorem ipsum dolor sit amet
                     </div>
                     <div className='Footer-Icons'>
-                        <img src={facebook}/>
-                        <img src={twitter}/>
-                        <img src={instagram}/>
+                        <img src={facebook} alt="facebook"/>
+                        <img src={twitter} alt="twitter"/>
+                        <img src={instagram} alt="instagram"/>
                     </div>
                 </div>
                 <div className='Navigation-Wrapper'>

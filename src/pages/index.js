@@ -22,4 +22,12 @@ const IndexPage = () => {
 
 export default IndexPage;
 
-export const Head = () => <title>Home</title>;
+export const Head = () => {
+    return (
+        <>
+            <meta name="x-robots-tag" content="all" />
+            <meta name="description" content="My page" />
+            <title>Home</title>
+        </>
+    );
+};

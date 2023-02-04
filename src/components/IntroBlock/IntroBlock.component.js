@@ -71,7 +71,7 @@ const renderBlocks = (blocks) => {
         } = el;
 
         return (
-            <div key={`IntroBlock-${i}`} className='IntroBlock-Wrapper'>
+            <div key={`IntroBlock-${i}`} className='IntroBlock-Wrapper' alt={title}>
                 <div className='IntroBlock-Image'>
                     <img src={url}/>
                 </div>

@@ -30,6 +30,12 @@ function useScrollDirection () {
     return show;
 };
 
+const onClickHandler = () => {
+    const scrollToEl = document.querySelector('.MortgageCalculatorBlock');
+
+    scrollToEl.scrollIntoView({ behavior: 'smooth' });
+};
+
 const Header = () => {
     const scrollDirection = useScrollDirection();
 
@@ -38,7 +44,7 @@ const Header = () => {
             <div className='Content-Wrapper'>
                 <CustomerLogo></CustomerLogo>
                 <div className='Tab-Wrapper'>
-                    <p>Calculator</p>
+                    <button onClick={onClickHandler}>Calculator</button>
                     <p>Services</p>
                 </div>
             </div>

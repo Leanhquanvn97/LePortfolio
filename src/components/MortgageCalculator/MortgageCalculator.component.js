@@ -11,27 +11,8 @@ export class MortgageCalculator extends PureComponent {
         interestRate: 0
     };
 
-    getPurchaseAmount = (val) => {
-        this.setState({ purchaseAmount: val });
-    };
-
-    getDownPayment = (val) => {
-        this.setState({ downPayment: val });
-    };
-
-    getRepaymentTime = (val) => {
-        this.setState({ repaymentTime: val });
-    };
-
-    getInterestRate = (val) => {
-        this.setState({ interestRate: val });
-    };
-
-    getMap = {
-        [DATA_TYPE[0].type]: this.getPurchaseAmount,
-        [DATA_TYPE[1].type]: this.getDownPayment,
-        [DATA_TYPE[2].type]: this.getRepaymentTime,
-        [DATA_TYPE[3].type]: this.getInterestRate
+    getBarValue = (val, type) => {
+        this.setState({ [type]: val });
     };
 
     calculateLoanAmount = () => {
@@ -44,11 +25,12 @@ export class MortgageCalculator extends PureComponent {
     };
 
     renderDraggableBar = () => {
-        return Object.entries(this.getMap).map(([_, func], index) => {
+        return DATA_TYPE.map(el => {
             return <DraggableBar
-                text={DATA_TYPE[index].text}
-                scale={DATA_TYPE[index].scale}
-                getValue={func} key={index}/>;
+                text={el.text}
+                scale={el.scale}
+                type={el.type}
+                getValue={this.getBarValue} key={el.type}/>;
         });
     };
 

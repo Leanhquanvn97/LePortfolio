@@ -1,7 +1,7 @@
 export const DATA_TYPE = [
     {
         scale: 9000,
-        type: 'purchasePrice',
+        type: 'purchaseAmount',
         text: 'Purchase Price'
     },
     {

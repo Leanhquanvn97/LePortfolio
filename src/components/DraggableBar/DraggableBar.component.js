@@ -7,13 +7,15 @@ export class DraggbleBar extends PureComponent {
     static propTypes = {
         scale: PropTypes.number,
         getValue: PropTypes.func,
-        text: PropTypes.string
+        text: PropTypes.string,
+        type: PropTypes.string
     };
 
     static defaultProps = {
         scale: 0,
         getValue: {},
-        text: ''
+        text: '',
+        type: ''
     };
 
     state = {
@@ -28,7 +30,8 @@ export class DraggbleBar extends PureComponent {
     componentDidUpdate = () => {
         const {
             scale,
-            getValue
+            getValue,
+            type
         } = this.props;
         const {
             inputRange
@@ -37,7 +40,7 @@ export class DraggbleBar extends PureComponent {
         this.setState({ value });
 
         if (getValue) {
-            getValue(value);
+            getValue(value, type);
         }
     };
 

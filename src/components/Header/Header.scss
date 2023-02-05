@@ -3,10 +3,11 @@ header {
     color: white;
     min-height: 70px;
     padding-block: 18px;
-    position: sticky;
+    position: fixed;
     top: 0;
     z-index: 10;
-    transition: transform 0.3s linear;
+    transition: all 0.3s linear;
+    width: 100vw;
 
     @include desktop {
         padding-block: 42px 30px;
@@ -42,7 +43,11 @@ header {
     }
 
     &.mini {
-        transform: translateY(-10%);
+        padding-block: 10px 0px;
+
+        @include desktop {
+            padding-block: 20px 10px;
+        }
     }
 
     .Name {

@@ -77,10 +77,16 @@
     .HeroBanner-Conent {
         padding-inline: 20px;
         z-index: 3;
+        min-height: 505px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
 
-        @include desktop {
+        @include desktop {        
+            min-height: 570px;
             padding-inline: 50px;
             flex: 1;
+            height: fit-content;
         }
 
         @include large-screen {
@@ -100,6 +106,6 @@
     width: 100%;
     position: relative;
     z-index: 2;
-    background: transparent;
     pointer-events: none;
+    background: linear-gradient(135deg,transparent 7%,transparent 50%,rgba(0,0,0,.1));
 }

@@ -1,7 +1,18 @@
 import { graphql, useStaticQuery } from 'gatsby';
-import React from 'react';
+import React, { useEffect } from 'react';
 import './HeroBanner.scss';
 import HeroBannerImage from '../Svg/HeroBannerImage.component';
+
+const displayText = async (textString) => {
+    const title = document.querySelector('.HeroBanner-Title');
+    const time = 50;
+
+    await [...textString].forEach((el, i) => {
+        setTimeout(() => {
+            title.innerHTML += el;
+        }, time * i);
+    });
+};
 
 const HeroBanner = () => {
     const data = useStaticQuery(graphql`
@@ -34,20 +45,26 @@ const HeroBanner = () => {
             title = ''
         } = {}
     } = data;
+    console.log(title);
+    useEffect(() => {
+        displayText(title);
+    }, []);
 
     return (
         <>
             <div className='HeroBanner'>
                 <div className='HeroBanner-Conent'>
-                    <h1>{title}</h1>
-                    <p>{description}</p>
-                    <button>{buttonText}</button>
+                    <h1 className='HeroBanner-Title'></h1>
+                    <div>
+                        <p>{description}</p>
+                        <button>{buttonText}</button>
+                    </div>
                 </div>
                 <div className='HeroBanner-Image'>
                     <HeroBannerImage/>
                 </div>
             </div>
-            <div className="fullscreen empty-div gradient-overlay"></div>
+            <div className="empty-div"></div>
         </>
 
     );

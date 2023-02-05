@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import CustomerLogo from '../CustomerLogo/CustomerLogo.component';
 import './Header.scss';
 
-function useScrollDirection () {
+const useScrollDirection = () => {
     const [show, setShow] = useState('show');
 
     useEffect(() => {

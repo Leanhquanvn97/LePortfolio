@@ -56,11 +56,11 @@
 
         @include desktop {
             padding: 16px 50px;
-            transform: none;
         } 
     
         @include small-desktop-screen {
             padding-inline: 0;
+            transform: none;
         }
     }
 

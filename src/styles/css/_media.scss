@@ -27,3 +27,10 @@
         @content;
     }
 }
+
+@mixin tablet {
+    @media (min-width: 811px)
+        and (max-width: 1024px) {
+        @content;
+    }
+}

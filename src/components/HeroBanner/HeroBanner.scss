@@ -1,16 +1,15 @@
 .HeroBanner {
+    width: 100%;
     background-color: $primary-color;
     display: flex;
     padding-block: 80px 50px;    
     flex-direction: column;
-    height: 96vh;
+    height: 100vh;
     position: fixed;
     top: 0;
-    width: 100%;
 
     @include desktop {
         padding-block: 175px 100px;        
-        height: auto;
     }
 
     @include small-desktop-screen {

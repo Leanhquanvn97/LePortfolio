@@ -6,7 +6,7 @@ const stylePath = `${__dirname}/src/styles/style`.replace(/\\/g, '/');
 
 module.exports = {
     siteMetadata: {
-        title: 'SaigonDigital Test',
+        title: 'Le Portfolio',
         siteUrl: 'https://www.yourdomain.tld'
     },
     plugins: [{

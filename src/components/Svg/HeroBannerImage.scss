@@ -18,13 +18,13 @@
             path {
                 animation: progress 1s linear forwards;
                 stroke-dasharray: 1038;
-
+                
                 @keyframes progress {
-                    from {
+                    0% {
                         stroke-dashoffset: 178%;
                     }
 
-                    to {
+                    100% {
                         stroke-dashoffset: 0;
                     }
                 }

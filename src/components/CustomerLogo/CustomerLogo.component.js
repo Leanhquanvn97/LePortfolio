@@ -5,10 +5,10 @@ export const CustomerLogo = () => {
     return (
         <div className='Name-Wrapper'>
             <div className='Name-Icon'>
-                K
+                L
             </div>
             <div className='Name'>
-                Kinka <br />Finance
+                Le <br />Quan
             </div>
         </div>
     );

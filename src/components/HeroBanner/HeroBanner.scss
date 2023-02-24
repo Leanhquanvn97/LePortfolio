@@ -22,18 +22,145 @@
         line-height: 130%;
         letter-spacing: 0.01em;
         color: white;
+        position: relative;
+        animation: glitch-skew 1s linear infinite alternate-reverse;
 
         @include desktop {
             font-size: 62px;
         }
+
+        &::before,
+        &::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+        }
+
+        &::after {
+            left: 2px;
+            text-shadow: -2px 0  #FF7B01;
+            animation: glitch-anim 2s linear infinite alternate-reverse;
+        }
+
+        &::before {
+            left: -2px;
+            text-shadow: -2px 0 #0fa;
+            // animation: glitch-anim 1s linear infinite alternate-reverse;
+        }
+
+        @keyframes glitch-skew {
+            0% {
+                transform: skew(3deg);
+            }
+            20% {
+                transform: skew(1deg);
+            }
+            40% {
+                transform: skew(2deg);
+            }
+            60% {
+                transform: skew(1deg);
+            }
+            80% {
+                transform: skew(0deg);
+            }
+            90% {
+                transform: skew(5deg);
+            }
+        }
+
+        @keyframes glitch-anim {
+            0% {
+                clip-path: polygon(0 90%, 100% 90%, 100% 100%, 0 100%);
+                transform: skew(.54deg)
+            }
+        
+            10% {
+                clip-path: polygon(0 80%, 100% 80%, 100% 100%, 0 100%);
+                transform: skew(.54deg)
+            }
+
+            20% {
+                clip-path: polygon(0 70%, 100% 70%, 100% 100%, 0 100%);
+                transform: skew(.54deg)
+            }
+        
+            30% {
+                clip-path: polygon(0 60%, 100% 60%, 100% 100%, 0 100%);
+                transform: skew(.54deg)
+            }
+
+            40% {
+                clip-path: polygon(0 50%, 100% 50%, 100% 100%, 0 100%);
+                transform: skew(.54deg)
+            }
+        
+            50% {
+                clip-path: polygon(0 40%, 100% 40%, 100% 100%, 0 100%);
+                transform: skew(.54deg)
+            }
+        
+            60% {
+                clip-path: polygon(0 30%, 100% 30%, 100% 100%, 0 100%);
+                transform: skew(.54deg)
+            }
+
+            70% {
+                clip-path: polygon(0 20%, 100% 20%, 100% 100%, 0 100%);
+                transform: skew(.54deg)
+            }
+
+            80% {
+                clip-path: polygon(0 10%, 100% 10%, 100% 100%, 0 100%);
+                transform: skew(.54deg)
+            }
+
+            90% {
+                clip-path: polygon(0 00%, 100% 00%, 100% 100%, 0 100%);
+                transform: skew(.54deg)
+            }
+
+            100% {
+                clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+                transform: skew(.54deg)
+            }
+        }
     }
 
-    p {
+    .HeroBanner-Description {
         font-weight: 400;
-        font-size: 18px;
+        font-size: 34px;
         line-height: 180%;
         color: #FFFFFF;
         opacity: 0.8;
+        animation: flicker 2s infinite alternate;
+        color: #fff;
+        box-shadow:
+            0 0 7px #fff,
+            0 0 10px #fff,
+            0 0 21px #fff,
+            0 0 42px #0fa,
+            0 0 82px #0fa,
+            0 0 92px #0fa,
+            0 0 102px #0fa,
+            0 0 151px #0fa;
+        
+        @keyframes flicker {
+            0%, 100% {
+                box-shadow:
+                0 0 4px #fff,
+                0 0 11px #fff,
+                0 0 19px #fff,
+                0 0 40px #0fa,
+                0 0 80px #0fa,
+                0 0 90px #0fa,
+                0 0 100px #0fa,
+                0 0 150px #0fa;
+            }
+            55% {       
+                box-shadow: none;
+            }
+          }
     }
 
     img {

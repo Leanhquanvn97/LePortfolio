@@ -4,7 +4,7 @@ import './HeroBanner.scss';
 import HeroBannerImage from '../Svg/HeroBannerImage.component';
 
 const displayText = async (textString) => {
-    const title = document.querySelector('.HeroBanner-Title');
+    const title = document.querySelector('.HeroBanner-Description');
     const time = 50;
 
     await [...textString].forEach((el, i) => {
@@ -45,18 +45,18 @@ const HeroBanner = () => {
             title = ''
         } = {}
     } = data;
-    console.log(title);
+
     useEffect(() => {
-        displayText(title);
+        displayText(description);
     }, []);
 
     return (
         <>
             <div className='HeroBanner'>
                 <div className='HeroBanner-Conent'>
-                    <h1 className='HeroBanner-Title'></h1>
+                    <h1 className='HeroBanner-Title' data-text={title}>{title}</h1>
                     <div>
-                        <p>{description}</p>
+                        <p className='HeroBanner-Description'></p>
                         <button>{buttonText}</button>
                     </div>
                 </div>

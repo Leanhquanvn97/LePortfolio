@@ -58,7 +58,7 @@ export class MortgageCalculator extends PureComponent {
         return (
             <div className='MortgageCalculator'>
                 <h2>Mortgage Calculator</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+                <p>A powerful financial tool that simplifies complex loan calculations</p>
                 <div className='MortgageCalculator-Input'>
                     {this.renderDraggableBar()}
                 </div>

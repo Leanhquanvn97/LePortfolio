@@ -20,14 +20,13 @@ const HeroBanner = () => {
             contentfulHeroBanner {
                 buttonText
                 id
-                image1 {
-                description
-                url
-                }
                 description {
                     description
                 }
                 title
+                resume {
+                    url
+                }
             }
         }
     `);
@@ -42,7 +41,10 @@ const HeroBanner = () => {
             description: {
                 description = ''
             } = {},
-            title = ''
+            title = '',
+            resume: {
+                url
+            }
         } = {}
     } = data;
 
@@ -57,7 +59,7 @@ const HeroBanner = () => {
                     <h1 className='HeroBanner-Title' data-text={title}>{title}</h1>
                     <div>
                         <p className='HeroBanner-Description'></p>
-                        <button>{buttonText}</button>
+                        <a className="Button" href={url} target="_blank" rel="noreferrer">{buttonText}</a>
                     </div>
                 </div>
                 <div className='HeroBanner-Image'>

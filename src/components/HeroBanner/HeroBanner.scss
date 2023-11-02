@@ -133,7 +133,9 @@
         line-height: 180%;
         color: #FFFFFF;
         opacity: 0.8;
-        animation: flicker 2s infinite alternate;
+        animation: flicker 20s infinite alternate;
+        border: solid 3px;
+        padding-inline: 16px;
         color: #fff;
         box-shadow:
             0 0 7px #fff,
@@ -190,7 +192,7 @@
         }
     }
 
-    button {
+    button, .Button {
         color: white;
         background-color: $orange-color;
         border: 0;
@@ -198,7 +200,9 @@
         height: 62px;
         font-weight: 900;
         font-size: 18px;
-        line-height: 180%;
+        line-height: 62px;
+        display: block;
+        text-align: center;
     }
 
     .HeroBanner-Conent {

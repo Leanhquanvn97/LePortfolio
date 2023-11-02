@@ -36,7 +36,7 @@ export const Footer = () => {
                 <div className='Icon-Wrapper'>
                     <CustomerLogo></CustomerLogo>
                     <div className='Footer-Text'>
-                        2021 Award winning Finance Advisor and Lorem ipsum dolor sit amet
+                        2023
                     </div>
                     <div className='Footer-Icons'>
                         <img src={facebook} alt="facebook"/>

@@ -46,7 +46,7 @@ const IntroBlock = () => {
 
     return (
         <div className='IntroBlock'>
-            <h2>High Quality Output, Awesome Service</h2>
+            <h2>Who Am I???</h2>
             <div>
                 {renderBlocks(data)}
             </div>

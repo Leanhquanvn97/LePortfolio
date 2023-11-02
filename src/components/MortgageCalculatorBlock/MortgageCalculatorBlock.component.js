@@ -7,9 +7,9 @@ const MortgageCalculatorBlock = () => {
         <div className='MortgageCalculatorBlock'>
             <MortgageCalculator/>
             <div className='MortgageCalculatorBlock-Text'>
-                <h2>Try our awesome Calculator</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
-                <button>Register</button>
+                <h2>Try my awesome Calculator</h2>
+                <p>A fun side project</p>
+                <button className='Button-Disabled'>Register</button>
             </div>
         </div>
     );

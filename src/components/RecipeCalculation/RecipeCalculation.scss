@@ -1,0 +1,19 @@
+.RecipeCalculation {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5vw;
+    padding-bottom: 120px;
+
+    &-Table {
+        border-collapse: collapse;
+
+        tr {
+            padding: 4px;
+            border-bottom: 1px solid black;
+        }
+
+        td {
+            padding-inline: 16px;
+        }
+    }
+}

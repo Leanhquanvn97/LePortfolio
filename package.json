@@ -25,7 +25,9 @@
     "gatsby-source-contentful": "^8.5.0",
     "gatsby-transformer-sharp": "^5.5.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-export-table-to-excel": "^1.0.6",
+    "read-excel-file": "^5.7.1"
   },
   "devDependencies": {
     "eslint": "^8.33.0",

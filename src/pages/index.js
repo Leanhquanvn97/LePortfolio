@@ -5,6 +5,7 @@ import HeroBanner from '../components/HeroBanner/HeroBanner.component';
 import IntroBlock from '../components/IntroBlock/IntroBlock.component';
 import MortgageCalculatorBlock from '../components/MortgageCalculatorBlock/MortgageCalculatorBlock.component';
 import './root.scss';
+import RecipeCalculation from '../components/RecipeCalculation/RecipeCalculation';
 
 const IndexPage = () => {
     return (
@@ -14,6 +15,7 @@ const IndexPage = () => {
                 <HeroBanner/>
                 <IntroBlock/>
                 <MortgageCalculatorBlock/>
+                <RecipeCalculation/>
             </main>
             <Footer/>
         </>

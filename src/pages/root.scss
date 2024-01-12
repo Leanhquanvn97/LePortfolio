@@ -42,6 +42,12 @@ button, .Button {
     }
 }
 
+.Button {
+    color: white;
+    background-color: $orange-color;
+    text-align: center;
+}
+
 a {
     text-decoration: none;
 }
@@ -51,3 +57,4 @@ a {
         opacity: 0.4;
     }
 }
+

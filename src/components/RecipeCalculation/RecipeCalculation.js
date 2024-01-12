@@ -104,10 +104,8 @@ export class RecipeCalculation extends PureComponent {
     };
 
     render () {
-        console.log(this.elementRefs[0]);
-
         return (
-            <section>
+            <section id='Recipe-Calculation'>
                 <input type="file" id="inputExcel" onChange={(e) => this.onExcelChange(e)}/>
                 <input type="number" id="inputNumber" value={this.state.targetAmount} onChange={(e) => this.onTargetAmountChange(e)}/>
                 <button onClick={(e) => this.onCalculate(e)}>Tim</button>

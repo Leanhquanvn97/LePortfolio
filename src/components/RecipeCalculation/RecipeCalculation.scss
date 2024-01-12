@@ -1,11 +1,13 @@
 .RecipeCalculation {
     display: flex;
-    flex-wrap: wrap;
     gap: 5vw;
     padding-bottom: 120px;
+    flex-direction: column;
+    align-items: center;
 
     &-Table {
         border-collapse: collapse;
+        width: 100%;
 
         tr {
             padding: 4px;
@@ -14,6 +16,58 @@
 
         td {
             padding-inline: 16px;
+        }
+    }
+
+    &-Input {
+        background-color: $primary-color;
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        font-weight: 900;
+        font-size: 18px;
+        line-height: 180%;
+        color: white;
+        padding: 65px 50px 70px 50px;
+        align-items: center;
+
+        input {
+            font-weight: 900;
+            font-size: 18px;
+            line-height: 180%;
+        }
+    }
+
+    &-Amount {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        margin-block: 12px;
+
+        button {
+            color: white;
+            background-color: #FF8049;
+            border: 0;
+            width: 152px;
+            height: 62px;
+            font-weight: 900;
+            font-size: 18px;
+            line-height: 62px;
+            display: block;
+            text-align: center;
+        }
+
+        input {
+            margin-block-end: 12px;
+        }
+    }
+
+    &-Results {
+        @include small-desktop-screen {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
         }
     }
 }

@@ -7,7 +7,7 @@ export class RecipeCalculation extends PureComponent {
     state = {
         excelData: [],
         targetAmount: 1000000,
-        numberOfRow: 0,
+        numberOfItems: 10,
         ouputArray: []
     };
 
@@ -20,7 +20,7 @@ export class RecipeCalculation extends PureComponent {
         }
     };
 
-    generateRandomArrays = (inputArray, totalPrice) => {
+    generateRandomArrays = (inputArray, totalPrice, maxItems) => {
     // Sort the input array by price
         inputArray.sort((a, b) => a[3] - b[3]);
 
@@ -28,28 +28,38 @@ export class RecipeCalculation extends PureComponent {
         for (let i = 0; i < 100; i++) {
             const tempArray = [];
             let tempTotal = 0;
-            const shuffledArray = [...inputArray].sort(() => Math.random() - 0.5); // shuffle the input array
-            let j = 0; // index for iterating over the shuffled array
-            while (tempTotal <= totalPrice && j < shuffledArray.length) {
-                const item = [...shuffledArray[j]]; // copy the item
+            const shuffledArray = [...inputArray].sort(() => Math.random() - 0.5);
+            let j = 0;
+            while (tempTotal <= totalPrice && j < shuffledArray.length && tempArray.length < maxItems) {
+                const item = [...shuffledArray[j]];
                 const maxQuantity = item[2];
                 const remaining = totalPrice - tempTotal;
                 const maxPossibleQuantity = Math.floor(remaining / item[3]);
                 const quantity = Math.min(maxQuantity, maxPossibleQuantity);
                 if (quantity > 0) {
                     const itemTotal = quantity * item[3];
-                    item[2] = quantity; // update the quantity of the item
+                    item[2] = quantity;
                     tempArray.push(item);
                     tempTotal += itemTotal;
                 }
                 j++;
             }
+            tempArray.sort((a, b) => b[3] - a[3]);
+            for (let k = 0; k < tempArray.length; k++) {
+                const item = tempArray[k];
+                const remaining = totalPrice - tempTotal;
+                const maxPossibleQuantity = Math.floor(remaining / item[3]);
+                const additionalQuantity = Math.min(item[2], maxPossibleQuantity);
+                if (additionalQuantity > 0) {
+                    const additionalTotal = additionalQuantity * item[3];
+                    item[2] += additionalQuantity;
+                    tempTotal += additionalTotal;
+                }
+            }
             tempArray.push(tempTotal);
             allArrays.push({ array: tempArray, total: tempTotal });
         }
-        // Sort the arrays by the absolute difference between their total price and the input total price
         allArrays.sort((a, b) => Math.abs(totalPrice - a.total) - Math.abs(totalPrice - b.total));
-        // Select the 10 arrays with the smallest difference
         const result = allArrays.slice(0, 10).map(a => a.array);
         return result;
     };
@@ -58,8 +68,12 @@ export class RecipeCalculation extends PureComponent {
         this.setState({ targetAmount: e.target.value });
     };
 
+    onChangeNumberOfItems = (e) => {
+        this.setState({ numberOfItems: e.target.value });
+    };
+
     onCalculate = (e) => {
-        const result = this.generateRandomArrays(this.state.excelData, this.state.targetAmount);
+        const result = this.generateRandomArrays(this.state.excelData, this.state.targetAmount, this.state.numberOfItems);
         this.setState({ ouputArray: result });
     };
 
@@ -105,11 +119,18 @@ export class RecipeCalculation extends PureComponent {
 
     render () {
         return (
-            <section id='Recipe-Calculation'>
-                <input type="file" id="inputExcel" onChange={(e) => this.onExcelChange(e)}/>
-                <input type="number" id="inputNumber" value={this.state.targetAmount} onChange={(e) => this.onTargetAmountChange(e)}/>
-                <button onClick={(e) => this.onCalculate(e)}>Tim</button>
-                <div className='RecipeCalculation'>
+            <section id='Recipe-Calculation' className='RecipeCalculation'>
+                <div className='RecipeCalculation-Input'>
+                    <input type="file" id="inputExcel" onChange={(e) => this.onExcelChange(e)}/>
+                    <div className='RecipeCalculation-Amount'>
+                        <label>Total amount</label>
+                        <input type="number" id="inputNumber" value={this.state.targetAmount} onChange={(e) => this.onTargetAmountChange(e)}/>
+                        <label>Number of items</label>
+                        <input type="number" id="numberOfItems" value={this.state.numberOfItems} onChange={(e) => this.onChangeNumberOfItems(e)}/>
+                        <button onClick={(e) => this.onCalculate(e)}>search</button>
+                    </div>
+                </div>
+                <div className='RecipeCalculation-Results'>
                     {this.state.ouputArray.map((el, index) => {
                         return (
                             <div key={index}>

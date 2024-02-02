@@ -108,7 +108,7 @@ export class RecipeCalculation extends PureComponent {
                                     <td>{index + 1}</td>
                                     <td>{value[1]}</td>
                                     <td>{value[2]}</td>
-                                    <td>{value[3]}</td>
+                                    <td>{value[3] * value[2]}</td>
                                 </tr>);
                         })}
                     </tbody>
